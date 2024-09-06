@@ -3,13 +3,16 @@ import viteLogo from "/vite.svg"
 import PlaylistButton from "./components/PlaylistButton";
 
 function App() {
+
+  let [pamagat, setPamagat] = useState();
   //TODO: Comment or delete the currentTrack variable and replace it with useState. 
   //      The goal is to show the current track playing on click events.
 
-  let currentTrack = undefined;
+  //let currentTrack;
 
   function handleClick(trackTitle){
     console.log(trackTitle); //check console to see what this function do.
+    setPamagat(trackTitle);
   }
 
   return (
@@ -17,7 +20,7 @@ function App() {
       <main className="flex flex-col gap-4 w-full min-h-screen justify-center items-center">
 
         {/* TERNARY OPERATOR - puwede ninyong i-advance reading ito but basically similar siya sa if statement */}
-        <h1>{currentTrack ? "Now Playing: " + currentTrack : "Select a music"}</h1>
+        <h1>{pamagat ? "Now Playing: " + pamagat : "Select a music"}</h1>
 
         <button 
           onClick={()=>handleClick("Track title 1")} //uses arrow function. Discuss ko next week kung bakit arrow function ginamit dito.
